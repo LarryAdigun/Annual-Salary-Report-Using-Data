@@ -87,10 +87,16 @@ fs.readFile("salaries.txt", "utf8", function(err, data) {
     //console.log(data);
     for (var i = 0; i < salariesDataArray.length; i++) {
         if (salariesDataArray[i].slice(27, 31) == "9999") {
-
+            for (var j = 0; j < employeeId.length; j++) {
+                for (var k = 0; k < employeeId[j].length; k++) {
+                    
+                }
+            }
+            salaries.push(salariesDataArray[i].slice(7, 12));
 
 
         }
+        console.log(salaries)
     }
 
 
