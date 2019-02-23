@@ -25,40 +25,40 @@ fs.readFile("dept.txt", "utf8", function(err, data) {
         departments.push(deptDataArray[i].slice(9, -3));
 
 
-//         //populate empty multi-dimensional arrays with sub arrays
-//         employeeId.push([]);
-//         employeeName.push([]);
-//         salaries.push([])
-//     }
+        //populate empty multi-dimensional arrays with sub arrays
+        employeeId.push([]);
+        employeeName.push([]);
+        salaries.push([])
+    }
 
 
-//     // console.log(departmentID);
-//     // console.log(departments);
-//     // console.log(employeeId);
-//     // console.log(employeeName);
-//     // console.log(salaries);
+    // console.log(departmentID);
+    // console.log(departments);
+    // console.log(employeeId);
+    // console.log(employeeName);
+    // console.log(salaries);
 
-// });
+});
 
-// fs.readFile("department.txt", "utf8", function(err, data) {
-//     if (err) throw err;
-//     var employeeDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
-//     var employeeDataArray = employeeDataClean.split("\n");
-//     for (var i = 0; i < employeeDataArray.length; i++) {
+fs.readFile("department.txt", "utf8", function(err, data) {
+    if (err) throw err;
+    var employeeDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
+    var employeeDataArray = employeeDataClean.split("\n");
+    for (var i = 0; i < employeeDataArray.length; i++) {
 
-//         if (employeeDataArray[i].slice(28, 32) == "9999") {
-//             // console.log(employeeDataArray[i].slice(8, 12));
-//             //  console.log(employeeDataArray[i].slice(1, 6))
-//              employeeId[departmentID.indexOf(employeeDataArray[i].slice(8,12))].push(employeeDataArray[i].slice(1,6));
-//         }
+        if (employeeDataArray[i].slice(28, 32) == "9999") {
+            // console.log(employeeDataArray[i].slice(8, 12));
+            //  console.log(employeeDataArray[i].slice(1, 6))
+            employeeId[departmentID.indexOf(employeeDataArray[i].slice(8, 12))].push(employeeDataArray[i].slice(1, 6));
+        }
 
 
-//     }
+    }
 
-//     // console.log(employeeDataArray);
-//     console.log(employeeId)
+    // console.log(employeeDataArray);
+    console.log(employeeId)
 
-// });
+});
 
 fs.readFile("employee.txt", "utf8", function(err, data) {
     if (err) throw err;
@@ -67,15 +67,35 @@ fs.readFile("employee.txt", "utf8", function(err, data) {
     //console.log(data);
     for (var i = 0; i < employeeNameDataArray.length; i++) {
 
-        
-            employeeName.push(employeeNameDataArray[i].slice(21, 40));
+
+        employeeName.push(employeeNameDataArray[i].slice(21, 40));
+        //  console.log(employeeDataArray[i].slice(1, 6))
+        //employeeId[departmentID.indexOf(employeeDataArray[i].slice(8,12))].push(employeeDataArray[i].slice(1,6));
+
+
+
+    }
+    console.log(employeeName)
+
+
+});
+
+fs.readFile("salaries.txt", "utf8", function(err, data) {
+    if (err) throw err;
+    var salariesDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
+    var salariesDataArray = salariesDataClean.split("\n");
+    //console.log(data);
+    for (var i = 0; i < salariesDataArray.length; i++) {
+        if (salariesDataArray[i].slice(27, 31) == "9999") {
+
+            employeeName.push(salariesDataArray[i].slice(21, 40));
             //  console.log(employeeDataArray[i].slice(1, 6))
-             //employeeId[departmentID.indexOf(employeeDataArray[i].slice(8,12))].push(employeeDataArray[i].slice(1,6));
-    
+            //employeeId[departmentID.indexOf(employeeDataArray[i].slice(8,12))].push(employeeDataArray[i].slice(1,6));
 
 
-  }
-  console.log(employeeName)
-   
-   
+        }
+    }
+
+
+
 });
