@@ -42,14 +42,14 @@ fs.readFile("dept.txt", "utf8", function(err, data) {
 
 fs.readFile("department.txt", "utf8", function(err, data) {
     if (err) throw err;
-    var employeeDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
-    var employeeDataArray = employeeDataClean.split("\n");
-    for (var i = 0; i < employeeDataArray.length; i++) {
+    var employeeIdDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
+    var employeeIdDataArray = employeeIdDataClean.split("\n");
+    for (var i = 0; i < employeeIdDataArray.length; i++) {
 
-        if (employeeDataArray[i].slice(28, 32) == "9999") {
+        if (employeeIdDataArray[i].slice(28, 32) == "9999") {
             // console.log(employeeDataArray[i].slice(8, 12));
             //  console.log(employeeDataArray[i].slice(1, 6))
-            employeeId[departmentID.indexOf(employeeDataArray[i].slice(8, 12))].push(employeeDataArray[i].slice(1, 6));
+            employeeId[departmentID.indexOf(employeeIdDataArray[i].slice(8, 12))].push(employeeIdDataArray[i].slice(1, 6));
         }
 
 
@@ -88,9 +88,6 @@ fs.readFile("salaries.txt", "utf8", function(err, data) {
     for (var i = 0; i < salariesDataArray.length; i++) {
         if (salariesDataArray[i].slice(27, 31) == "9999") {
 
-            employeeName.push(salariesDataArray[i].slice(21, 40));
-            //  console.log(employeeDataArray[i].slice(1, 6))
-            //employeeId[departmentID.indexOf(employeeDataArray[i].slice(8,12))].push(employeeDataArray[i].slice(1,6));
 
 
         }
