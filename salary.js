@@ -40,7 +40,7 @@ fs.readFile("dept.txt", "utf8", function(err, data) {
 
 });
 
-fs.readFile("department.txt", "utf8", function(err, data) {
+fs.readFile("employeeid.txt", "utf8", function(err, data) {
     if (err) throw err;
     var employeeIdDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
     var employeeIdDataArray = employeeIdDataClean.split("\n");
@@ -60,7 +60,7 @@ fs.readFile("department.txt", "utf8", function(err, data) {
 
 });
 
-fs.readFile("employee.txt", "utf8", function(err, data) {
+fs.readFile("employeename.txt", "utf8", function(err, data) {
     if (err) throw err;
     var employeeNameDataClean = data.replace(/INSERT INTO `departments` VALUES \n/g, "");
     var employeeNameDataArray = employeeNameDataClean.split("\n");
